@@ -20,7 +20,8 @@ struct ContentView: View {
             .padding()
             .background(Color.yellow, in: RoundedRectangle(cornerRadius: 99))
             
-            Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
+            
+            Text("Above the World")
                 .padding()
                 .background(Color.green, in: RoundedRectangle(cornerRadius: 99))
         }
