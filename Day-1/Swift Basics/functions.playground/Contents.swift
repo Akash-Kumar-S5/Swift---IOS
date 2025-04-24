@@ -82,7 +82,6 @@ mul(3, 4)
 let words = ["swift", "closure", "enum"]
 let sorted = words.sorted { $0.count > $1.count }
 
-
 func perform(task: () -> Void) {
     print("Before")
     task()
