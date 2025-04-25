@@ -19,7 +19,7 @@ struct NavStackDemo: View {
         }
     }
 }
-
+//
 //#Preview{
 //    NavStackDemo()
 //}
@@ -36,7 +36,7 @@ struct ModalDemo: View {
         }
     }
 }
-//
+
 //#Preview {
 //    ModalDemo()
 //}
