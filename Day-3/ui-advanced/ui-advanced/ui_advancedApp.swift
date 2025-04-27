@@ -13,7 +13,8 @@ struct ui_advancedApp: App {
     var body: some Scene {
         WindowGroup {
 //            MainTabView()
-            ContentsView().environmentObject(settings)
+//            ContentsView().environmentObject(settings)
+            ColorAwareView()
         }
     }
 }
