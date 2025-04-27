@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ui_advancedApp: App {
+    @StateObject private var settings = UserSetting()
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+//            MainTabView()
+            ContentsView().environmentObject(settings)
         }
     }
 }
