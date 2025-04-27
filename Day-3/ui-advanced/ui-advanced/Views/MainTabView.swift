@@ -7,6 +7,8 @@ struct MainTabView: View {
         TabView {
             sumOfDigitsView()
                 .tabItem { Label("SOD", systemImage: "cross") }
+            TicTacTow()
+                .tabItem{ Label("TicTacToe", systemImage: "square.and.arrow.up")}
         }
     }
 }

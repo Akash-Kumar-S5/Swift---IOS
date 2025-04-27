@@ -30,7 +30,7 @@ greet("")
 greet("akash")
 
 // switch (with tuples & ranges)
-let point = (x: 90, y: 0)
+let point = (x: 80, y: 0)
 switch point {
 case (0, 0):
     print("Origin")

@@ -19,7 +19,7 @@ struct NavStackDemo: View {
         }
     }
 }
-//
+
 //#Preview{
 //    NavStackDemo()
 //}
@@ -31,15 +31,15 @@ struct ModalDemo: View {
         Button("Show Profile") {
             showSheet = true
         }
-        .sheet(isPresented: $showSheet) {
+        .popover(isPresented: $showSheet) {
             ProfileView()
         }
     }
 }
 
-//#Preview {
-//    ModalDemo()
-//}
+#Preview {
+    ModalDemo()
+}
 
 struct ProfileView: View {
     @Environment(\.dismiss) var dismiss
@@ -76,10 +76,10 @@ struct TabDemo: View {
         }
     }
 }
-
-#Preview {
-    TabDemo()
-}
+//
+//#Preview {
+//    TabDemo()
+//}
 
 class CounterModel: ObservableObject {
     @Published var count = 0
