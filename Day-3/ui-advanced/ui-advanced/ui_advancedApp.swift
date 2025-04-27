@@ -14,7 +14,9 @@ struct ui_advancedApp: App {
         WindowGroup {
 //            MainTabView()
 //            ContentsView().environmentObject(settings)
-            ColorAwareView()
+//            ColorAwareView()
+//            AppStroagePreview()
+            SceneStoragePreview()
         }
     }
 }
