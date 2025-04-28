@@ -16,6 +16,7 @@ extension View {
     }
 }
 
+
 extension View {
     func orangeTitle(color: Color = .orange) -> some View {
         self.foregroundColor(color)
