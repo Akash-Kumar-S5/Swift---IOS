@@ -16,11 +16,18 @@ extension View {
     }
 }
 
+extension View {
+    func orangeTitle(color: Color = .orange) -> some View {
+        self.foregroundColor(color)
+    }
+}
+
 struct CustomModifierExample: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("Custom Modifier")
                 .modifier(CardStyle())
+                .orangeTitle(color: .blue)
 
             Image(systemName: "star.fill")
                 .resizable()
