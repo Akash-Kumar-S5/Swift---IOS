@@ -39,7 +39,7 @@ actor AuthService {
 
     // MARK: - Persistence helpers
 
-    private func loadUsers() -> [StoredUser] {
+    public func loadUsers() -> [StoredUser] {
         guard
           let data = defaults.data(forKey: usersKey),
           let list = try? JSONDecoder().decode([StoredUser].self, from: data)

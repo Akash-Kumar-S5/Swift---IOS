@@ -10,6 +10,11 @@ struct SignupView: View {
           TextField("Email", text: $vm.email)
             .keyboardType(.emailAddress)
             .autocapitalization(.none)
+        if let msg = vm.emailError {
+          Text(msg)
+            .foregroundColor(.red)
+            .font(.caption)
+        }
           SecureField("Password", text: $vm.password)
           SecureField("Confirm Password", text: $vm.confirmPassword)
         }
@@ -23,7 +28,7 @@ struct SignupView: View {
         
         Section {
           Button {
-            Task { await vm.signUp() }
+            vm.signUp()
           } label: {
             if vm.isLoading {
               ProgressView()
@@ -34,6 +39,7 @@ struct SignupView: View {
           }
           .disabled(!vm.canSubmit || vm.isLoading)
         }
+        
       }
       .navigationTitle("Create Account")
       .alert("Success!", isPresented: $vm.didSignup) {
