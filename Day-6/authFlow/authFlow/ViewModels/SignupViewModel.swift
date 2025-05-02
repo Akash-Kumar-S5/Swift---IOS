@@ -16,6 +16,7 @@ class SignupViewModel: ObservableObject {
     @Published var isEmailAvailable  = true
     @Published var emailMessage        : String?    // ← New!
     @Published var passwordError    : String?
+    @Published var confirmPasswordError    : String?
 
     private let authService = AuthService()
     private var cancellables = Set<AnyCancellable>()
@@ -31,7 +32,7 @@ class SignupViewModel: ObservableObject {
             }
         
         $password
-            .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
+            .debounce(for: .milliseconds(1000), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .sink { [unowned self] pw in
                 guard !pw.isEmpty else {
@@ -42,8 +43,19 @@ class SignupViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
+        $confirmPassword
+            .debounce(for: .milliseconds(1000), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .sink { [unowned self] pw in
+                guard !pw.isEmpty else {
+                    self.confirmPasswordError = nil
+                    return
+                  }
+                self.confirmPasswordError = (password == pw) ? nil : "Must be same as password"
+            }
+            .store(in: &cancellables)
+        
 
-        // 2) debounced email availability check
         let emailDebounced = $email
             .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
             .removeDuplicates()

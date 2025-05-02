@@ -17,6 +17,11 @@ struct SignupView: View {
         }
           SecureField("Password", text: $vm.password)
           SecureField("Confirm Password", text: $vm.confirmPassword)
+            if let msg = vm.confirmPasswordError {
+              Text(msg)
+                    .foregroundColor(.red)
+                .font(.caption)
+            }
         }
           
       if let err = vm.passwordError {
