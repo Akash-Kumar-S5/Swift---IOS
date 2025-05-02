@@ -14,7 +14,8 @@ class SignupViewModel: ObservableObject {
     @Published var didSignup         = false
     @Published var canSubmit         = false
     @Published var isEmailAvailable  = true
-    @Published var emailError        : String?    // ← New!
+    @Published var emailMessage        : String?    // ← New!
+    @Published var passwordError    : String?
 
     private let authService = AuthService()
     private var cancellables = Set<AnyCancellable>()
@@ -28,6 +29,19 @@ class SignupViewModel: ObservableObject {
                 Validator.isStrongPassword(pw) &&
                 pw == confirm
             }
+        
+        $password
+            .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .sink { [unowned self] pw in
+                guard !pw.isEmpty else {
+                    self.passwordError = nil
+                    return
+                  }
+                self.passwordError = Validator.isStrongPassword(pw) ? nil : "Password must contain at least 8 characters, one symbol, one uppercase letter, one lowercase letter, and one digit."
+            }
+            .store(in: &cancellables)
+        
 
         // 2) debounced email availability check
         let emailDebounced = $email
@@ -45,6 +59,8 @@ class SignupViewModel: ObservableObject {
         availability
             .assign(to: \.isEmailAvailable, on: self)
             .store(in: &cancellables)
+        
+        
 
         // 4) derive an inline “emailError” message
         Publishers
@@ -52,12 +68,15 @@ class SignupViewModel: ObservableObject {
             .map { email, available -> String? in
                 // only show if user has typed something
                 guard !email.isEmpty else { return nil }
+                guard Validator.isValidEmail(email) else {
+                    return nil
+                }
                 return available
-                    ? nil
-                    : "That email is already taken."
+                    ? "Email Available"
+                    : "This email is already taken."
             }
             .receive(on: DispatchQueue.main)
-            .assign(to: \.emailError, on: self)
+            .assign(to: \.emailMessage, on: self)
             .store(in: &cancellables)
 
         // 5) overall canSubmit = localValid && availability
@@ -74,7 +93,7 @@ class SignupViewModel: ObservableObject {
     func signUp() {
         guard canSubmit else {
             // if emailError is non-nil, show that; else show generic
-            errorMsg = emailError ?? "Please fix the form."
+            errorMsg = emailMessage ?? "Please fix the form."
             return
         }
         isLoading = true

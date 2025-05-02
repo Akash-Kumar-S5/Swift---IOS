@@ -10,14 +10,21 @@ struct SignupView: View {
           TextField("Email", text: $vm.email)
             .keyboardType(.emailAddress)
             .autocapitalization(.none)
-        if let msg = vm.emailError {
+        if let msg = vm.emailMessage {
           Text(msg)
-            .foregroundColor(.red)
+                .foregroundColor( vm.isEmailAvailable ? .green: .red)
             .font(.caption)
         }
           SecureField("Password", text: $vm.password)
           SecureField("Confirm Password", text: $vm.confirmPassword)
         }
+          
+      if let err = vm.passwordError {
+        Section {
+          Text(err)
+            .foregroundColor(.red)
+        }
+      }
         
         if let err = vm.errorMsg {
           Section {

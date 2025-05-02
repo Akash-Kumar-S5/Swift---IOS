@@ -29,7 +29,7 @@ extension AuthService {
     for email: String
   ) -> AnyPublisher<Bool, Never> {
     // Debounce & send on a background queue if you like
-    return Future { promise in
+    Future { promise in
       Task {
         let available = await self.isEmailAvailable(email)
         promise(.success(available))
