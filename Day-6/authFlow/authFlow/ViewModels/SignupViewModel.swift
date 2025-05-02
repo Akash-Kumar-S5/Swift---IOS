@@ -32,25 +32,19 @@ class SignupViewModel: ObservableObject {
             }
         
         $password
+            .dropFirst()
             .debounce(for: .milliseconds(1000), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .sink { [unowned self] pw in
-                guard !pw.isEmpty else {
-                    self.passwordError = nil
-                    return
-                  }
                 self.passwordError = Validator.isStrongPassword(pw) ? nil : "Password must contain at least 8 characters, one symbol, one uppercase letter, one lowercase letter, and one digit."
             }
             .store(in: &cancellables)
         
         $confirmPassword
+            .dropFirst()
             .debounce(for: .milliseconds(1000), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .sink { [unowned self] pw in
-                guard !pw.isEmpty else {
-                    self.confirmPasswordError = nil
-                    return
-                  }
                 self.confirmPasswordError = (password == pw) ? nil : "Must be same as password"
             }
             .store(in: &cancellables)
