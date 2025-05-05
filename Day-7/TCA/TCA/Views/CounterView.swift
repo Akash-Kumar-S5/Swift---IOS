@@ -1,38 +1,47 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CounterView: View {
-  let store: StoreOf<CounterFeature>
+struct NumberFactView: View {
+    let store: StoreOf<NumberFactFeature>
 
-  var body: some View {
-    WithViewStore(store, observe: { $0 }) { viewStore in
-      VStack(spacing: 20) {
-        Text("Count: \(viewStore.count)")
-          .font(.largeTitle)
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("Count: \(store.count)")
+                .font(.largeTitle)
 
-        HStack(spacing: 20) {
-          Button("-") {
-            viewStore.send(.decrementButtonTapped)
-          }
-          .font(.title)
+            HStack(spacing: 20) {
+                Button("−") { store.send(.decrement) }
+                Button("+") { store.send(.increment) }
+            }
+            
+            HStack(spacing: 20) {
+                Button("Square") { store.send(.squareOf) }
+                    .buttonStyle(.borderedProminent)
+                Button("Fetch Fact") { store.send(.fetchFact) }
+                    .foregroundColor(.white)
+                    .buttonStyle(.borderedProminent)
+                Button("Clear") { store.send(.clear) }
+                    .buttonStyle(.borderedProminent)
+                    .colorInvert()
+            }
+            
 
-          Button("+") {
-            viewStore.send(.incrementButtonTapped)
-          }
-          .font(.title)
+            if let fact = store.fact {
+                Text(fact)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+            }
         }
-      }
-      .padding()
+        .padding()
     }
-  }
 }
 
 #Preview {
-    CounterView(
-      store: Store<CounterFeature.State, CounterFeature.Action>(
-        initialState: CounterFeature.State(),
+    NumberFactView(
+      store: Store<NumberFactFeature.State, NumberFactFeature.Action>(
+        initialState: NumberFactFeature.State(),
         reducer: {
-          CounterFeature()
+            NumberFactFeature()
         }
       )
     )

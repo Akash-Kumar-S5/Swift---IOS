@@ -11,7 +11,7 @@ import SwiftUI
 struct authFlowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignupView()
         }
     }
 }

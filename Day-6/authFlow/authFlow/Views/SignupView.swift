@@ -38,7 +38,7 @@ struct SignupView: View {
           }
         }
         
-        Section {
+        
           Button {
             vm.signUp()
           } label: {
@@ -52,7 +52,7 @@ struct SignupView: View {
           .disabled(!vm.canSubmit || vm.isLoading)
         }
         
-      }
+      
       .navigationTitle("Create Account")
       .alert("Success!", isPresented: $vm.didSignup) {
         Button("OK") { /* navigate to next screen */ }

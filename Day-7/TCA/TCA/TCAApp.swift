@@ -12,10 +12,13 @@ import ComposableArchitecture
 struct TCAApp: App {
     var body: some Scene {
         WindowGroup {
-            CounterView(
-              store: Store(initialState: CounterFeature.State()) {
-                CounterFeature()
-              }
+            NumberFactView(
+              store: Store<NumberFactFeature.State, NumberFactFeature.Action>(
+                initialState: NumberFactFeature.State(),
+                reducer: {
+                    NumberFactFeature()
+                }
+              )
             )
         }
     }
