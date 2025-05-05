@@ -14,7 +14,7 @@ class SignupViewModel: ObservableObject {
     @Published var didSignup         = false
     @Published var canSubmit         = false
     @Published var isEmailAvailable  = true
-    @Published var emailMessage        : String?    // ← New!
+    @Published var emailMessage        : String?   
     @Published var passwordError    : String?
     @Published var confirmPasswordError    : String?
 
