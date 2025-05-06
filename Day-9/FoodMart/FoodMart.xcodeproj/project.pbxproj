@@ -7,80 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23B4720C2DCA182500E8D254 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 23B4720B2DCA182500E8D254 /* ComposableArchitecture */; };
+		23B472432DCA1E6A00E8D254 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 23B472422DCA1E6A00E8D254 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2369CB132DC8945900A2B406 /* PBXContainerItemProxy */ = {
+		23B472242DCA1E2F00E8D254 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2369CAFD2DC8945800A2B406 /* Project object */;
+			containerPortal = 23B4720E2DCA1E2E00E8D254 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2369CB042DC8945800A2B406;
-			remoteInfo = TCA;
+			remoteGlobalIDString = 23B472152DCA1E2E00E8D254;
+			remoteInfo = FoodMart;
 		};
-		2369CB1D2DC8945900A2B406 /* PBXContainerItemProxy */ = {
+		23B4722E2DCA1E2F00E8D254 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2369CAFD2DC8945800A2B406 /* Project object */;
+			containerPortal = 23B4720E2DCA1E2E00E8D254 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2369CB042DC8945800A2B406;
-			remoteInfo = TCA;
+			remoteGlobalIDString = 23B472152DCA1E2E00E8D254;
+			remoteInfo = FoodMart;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2369CB052DC8945800A2B406 /* TCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2369CB122DC8945900A2B406 /* TCATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2369CB1C2DC8945900A2B406 /* TCAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B472162DCA1E2E00E8D254 /* FoodMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B472232DCA1E2F00E8D254 /* FoodMartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B4722D2DCA1E2F00E8D254 /* FoodMartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		235288912DC8BAC6009C989F /* Exceptions for "TCA" folder in "TCA" target */ = {
+		23B472702DCA343B00E8D254 /* Exceptions for "FoodMart" folder in "FoodMart" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 2369CB042DC8945800A2B406 /* TCA */;
+			target = 23B472152DCA1E2E00E8D254 /* FoodMart */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2369CB072DC8945800A2B406 /* TCA */ = {
+		23B472182DCA1E2E00E8D254 /* FoodMart */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				235288912DC8BAC6009C989F /* Exceptions for "TCA" folder in "TCA" target */,
+				23B472702DCA343B00E8D254 /* Exceptions for "FoodMart" folder in "FoodMart" target */,
 			);
-			path = TCA;
+			path = FoodMart;
 			sourceTree = "<group>";
 		};
-		2369CB152DC8945900A2B406 /* TCATests */ = {
+		23B472262DCA1E2F00E8D254 /* FoodMartTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TCATests;
+			path = FoodMartTests;
 			sourceTree = "<group>";
 		};
-		2369CB1F2DC8945900A2B406 /* TCAUITests */ = {
+		23B472302DCA1E2F00E8D254 /* FoodMartUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TCAUITests;
+			path = FoodMartUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2369CB022DC8945800A2B406 /* Frameworks */ = {
+		23B472132DCA1E2E00E8D254 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23B4720C2DCA182500E8D254 /* ComposableArchitecture in Frameworks */,
+				23B472432DCA1E6A00E8D254 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2369CB0F2DC8945900A2B406 /* Frameworks */ = {
+		23B472202DCA1E2F00E8D254 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2369CB192DC8945900A2B406 /* Frameworks */ = {
+		23B4722A2DCA1E2F00E8D254 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,28 +90,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2369CAFC2DC8945800A2B406 = {
+		23B4720D2DCA1E2E00E8D254 = {
 			isa = PBXGroup;
 			children = (
-				2369CB072DC8945800A2B406 /* TCA */,
-				2369CB152DC8945900A2B406 /* TCATests */,
-				2369CB1F2DC8945900A2B406 /* TCAUITests */,
-				23B4720A2DCA182500E8D254 /* Frameworks */,
-				2369CB062DC8945800A2B406 /* Products */,
+				23B472182DCA1E2E00E8D254 /* FoodMart */,
+				23B472262DCA1E2F00E8D254 /* FoodMartTests */,
+				23B472302DCA1E2F00E8D254 /* FoodMartUITests */,
+				23B472412DCA1E6A00E8D254 /* Frameworks */,
+				23B472172DCA1E2E00E8D254 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2369CB062DC8945800A2B406 /* Products */ = {
+		23B472172DCA1E2E00E8D254 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2369CB052DC8945800A2B406 /* TCA.app */,
-				2369CB122DC8945900A2B406 /* TCATests.xctest */,
-				2369CB1C2DC8945900A2B406 /* TCAUITests.xctest */,
+				23B472162DCA1E2E00E8D254 /* FoodMart.app */,
+				23B472232DCA1E2F00E8D254 /* FoodMartTests.xctest */,
+				23B4722D2DCA1E2F00E8D254 /* FoodMartUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		23B4720A2DCA182500E8D254 /* Frameworks */ = {
+		23B472412DCA1E6A00E8D254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -121,138 +121,138 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2369CB042DC8945800A2B406 /* TCA */ = {
+		23B472152DCA1E2E00E8D254 /* FoodMart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2369CB262DC8945900A2B406 /* Build configuration list for PBXNativeTarget "TCA" */;
+			buildConfigurationList = 23B472372DCA1E2F00E8D254 /* Build configuration list for PBXNativeTarget "FoodMart" */;
 			buildPhases = (
-				2369CB012DC8945800A2B406 /* Sources */,
-				2369CB022DC8945800A2B406 /* Frameworks */,
-				2369CB032DC8945800A2B406 /* Resources */,
+				23B472122DCA1E2E00E8D254 /* Sources */,
+				23B472132DCA1E2E00E8D254 /* Frameworks */,
+				23B472142DCA1E2E00E8D254 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2369CB072DC8945800A2B406 /* TCA */,
+				23B472182DCA1E2E00E8D254 /* FoodMart */,
 			);
-			name = TCA;
+			name = FoodMart;
 			packageProductDependencies = (
-				23B4720B2DCA182500E8D254 /* ComposableArchitecture */,
+				23B472422DCA1E6A00E8D254 /* ComposableArchitecture */,
 			);
-			productName = TCA;
-			productReference = 2369CB052DC8945800A2B406 /* TCA.app */;
+			productName = FoodMart;
+			productReference = 23B472162DCA1E2E00E8D254 /* FoodMart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2369CB112DC8945900A2B406 /* TCATests */ = {
+		23B472222DCA1E2F00E8D254 /* FoodMartTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2369CB292DC8945900A2B406 /* Build configuration list for PBXNativeTarget "TCATests" */;
+			buildConfigurationList = 23B4723A2DCA1E2F00E8D254 /* Build configuration list for PBXNativeTarget "FoodMartTests" */;
 			buildPhases = (
-				2369CB0E2DC8945900A2B406 /* Sources */,
-				2369CB0F2DC8945900A2B406 /* Frameworks */,
-				2369CB102DC8945900A2B406 /* Resources */,
+				23B4721F2DCA1E2F00E8D254 /* Sources */,
+				23B472202DCA1E2F00E8D254 /* Frameworks */,
+				23B472212DCA1E2F00E8D254 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2369CB142DC8945900A2B406 /* PBXTargetDependency */,
+				23B472252DCA1E2F00E8D254 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2369CB152DC8945900A2B406 /* TCATests */,
+				23B472262DCA1E2F00E8D254 /* FoodMartTests */,
 			);
-			name = TCATests;
+			name = FoodMartTests;
 			packageProductDependencies = (
 			);
-			productName = TCATests;
-			productReference = 2369CB122DC8945900A2B406 /* TCATests.xctest */;
+			productName = FoodMartTests;
+			productReference = 23B472232DCA1E2F00E8D254 /* FoodMartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2369CB1B2DC8945900A2B406 /* TCAUITests */ = {
+		23B4722C2DCA1E2F00E8D254 /* FoodMartUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2369CB2C2DC8945900A2B406 /* Build configuration list for PBXNativeTarget "TCAUITests" */;
+			buildConfigurationList = 23B4723D2DCA1E2F00E8D254 /* Build configuration list for PBXNativeTarget "FoodMartUITests" */;
 			buildPhases = (
-				2369CB182DC8945900A2B406 /* Sources */,
-				2369CB192DC8945900A2B406 /* Frameworks */,
-				2369CB1A2DC8945900A2B406 /* Resources */,
+				23B472292DCA1E2F00E8D254 /* Sources */,
+				23B4722A2DCA1E2F00E8D254 /* Frameworks */,
+				23B4722B2DCA1E2F00E8D254 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2369CB1E2DC8945900A2B406 /* PBXTargetDependency */,
+				23B4722F2DCA1E2F00E8D254 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2369CB1F2DC8945900A2B406 /* TCAUITests */,
+				23B472302DCA1E2F00E8D254 /* FoodMartUITests */,
 			);
-			name = TCAUITests;
+			name = FoodMartUITests;
 			packageProductDependencies = (
 			);
-			productName = TCAUITests;
-			productReference = 2369CB1C2DC8945900A2B406 /* TCAUITests.xctest */;
+			productName = FoodMartUITests;
+			productReference = 23B4722D2DCA1E2F00E8D254 /* FoodMartUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2369CAFD2DC8945800A2B406 /* Project object */ = {
+		23B4720E2DCA1E2E00E8D254 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					2369CB042DC8945800A2B406 = {
+					23B472152DCA1E2E00E8D254 = {
 						CreatedOnToolsVersion = 16.3;
 					};
-					2369CB112DC8945900A2B406 = {
+					23B472222DCA1E2F00E8D254 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 2369CB042DC8945800A2B406;
+						TestTargetID = 23B472152DCA1E2E00E8D254;
 					};
-					2369CB1B2DC8945900A2B406 = {
+					23B4722C2DCA1E2F00E8D254 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 2369CB042DC8945800A2B406;
+						TestTargetID = 23B472152DCA1E2E00E8D254;
 					};
 				};
 			};
-			buildConfigurationList = 2369CB002DC8945800A2B406 /* Build configuration list for PBXProject "TCA" */;
+			buildConfigurationList = 23B472112DCA1E2E00E8D254 /* Build configuration list for PBXProject "FoodMart" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 2369CAFC2DC8945800A2B406;
+			mainGroup = 23B4720D2DCA1E2E00E8D254;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				2369CB3B2DC8965B00A2B406 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				23B472402DCA1E6100E8D254 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 2369CB062DC8945800A2B406 /* Products */;
+			productRefGroup = 23B472172DCA1E2E00E8D254 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2369CB042DC8945800A2B406 /* TCA */,
-				2369CB112DC8945900A2B406 /* TCATests */,
-				2369CB1B2DC8945900A2B406 /* TCAUITests */,
+				23B472152DCA1E2E00E8D254 /* FoodMart */,
+				23B472222DCA1E2F00E8D254 /* FoodMartTests */,
+				23B4722C2DCA1E2F00E8D254 /* FoodMartUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2369CB032DC8945800A2B406 /* Resources */ = {
+		23B472142DCA1E2E00E8D254 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2369CB102DC8945900A2B406 /* Resources */ = {
+		23B472212DCA1E2F00E8D254 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2369CB1A2DC8945900A2B406 /* Resources */ = {
+		23B4722B2DCA1E2F00E8D254 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -262,21 +262,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2369CB012DC8945800A2B406 /* Sources */ = {
+		23B472122DCA1E2E00E8D254 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2369CB0E2DC8945900A2B406 /* Sources */ = {
+		23B4721F2DCA1E2F00E8D254 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2369CB182DC8945900A2B406 /* Sources */ = {
+		23B472292DCA1E2F00E8D254 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,20 +286,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2369CB142DC8945900A2B406 /* PBXTargetDependency */ = {
+		23B472252DCA1E2F00E8D254 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2369CB042DC8945800A2B406 /* TCA */;
-			targetProxy = 2369CB132DC8945900A2B406 /* PBXContainerItemProxy */;
+			target = 23B472152DCA1E2E00E8D254 /* FoodMart */;
+			targetProxy = 23B472242DCA1E2F00E8D254 /* PBXContainerItemProxy */;
 		};
-		2369CB1E2DC8945900A2B406 /* PBXTargetDependency */ = {
+		23B4722F2DCA1E2F00E8D254 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2369CB042DC8945800A2B406 /* TCA */;
-			targetProxy = 2369CB1D2DC8945900A2B406 /* PBXContainerItemProxy */;
+			target = 23B472152DCA1E2E00E8D254 /* FoodMart */;
+			targetProxy = 23B4722E2DCA1E2F00E8D254 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2369CB242DC8945900A2B406 /* Debug */ = {
+		23B472352DCA1E2F00E8D254 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -362,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		2369CB252DC8945900A2B406 /* Release */ = {
+		23B472362DCA1E2F00E8D254 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -418,7 +418,7 @@
 			};
 			name = Release;
 		};
-		2369CB272DC8945900A2B406 /* Debug */ = {
+		23B472382DCA1E2F00E8D254 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -427,18 +427,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TCA/Info.plist;
+				INFOPLIST_FILE = FoodMart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ak.TCA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ak.FoodMart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -446,7 +447,7 @@
 			};
 			name = Debug;
 		};
-		2369CB282DC8945900A2B406 /* Release */ = {
+		23B472392DCA1E2F00E8D254 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -455,18 +456,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TCA/Info.plist;
+				INFOPLIST_FILE = FoodMart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ak.TCA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ak.FoodMart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -474,7 +477,7 @@
 			};
 			name = Release;
 		};
-		2369CB2A2DC8945900A2B406 /* Debug */ = {
+		23B4723B2DCA1E2F00E8D254 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -483,16 +486,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ak.TCATests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ak.FoodMartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TCA";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodMart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FoodMart";
 			};
 			name = Debug;
 		};
-		2369CB2B2DC8945900A2B406 /* Release */ = {
+		23B4723C2DCA1E2F00E8D254 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,82 +504,82 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ak.TCATests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ak.FoodMartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TCA";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodMart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FoodMart";
 			};
 			name = Release;
 		};
-		2369CB2D2DC8945900A2B406 /* Debug */ = {
+		23B4723E2DCA1E2F00E8D254 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ak.TCAUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ak.FoodMartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TCA;
+				TEST_TARGET_NAME = FoodMart;
 			};
 			name = Debug;
 		};
-		2369CB2E2DC8945900A2B406 /* Release */ = {
+		23B4723F2DCA1E2F00E8D254 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ak.TCAUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ak.FoodMartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TCA;
+				TEST_TARGET_NAME = FoodMart;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2369CB002DC8945800A2B406 /* Build configuration list for PBXProject "TCA" */ = {
+		23B472112DCA1E2E00E8D254 /* Build configuration list for PBXProject "FoodMart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2369CB242DC8945900A2B406 /* Debug */,
-				2369CB252DC8945900A2B406 /* Release */,
+				23B472352DCA1E2F00E8D254 /* Debug */,
+				23B472362DCA1E2F00E8D254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2369CB262DC8945900A2B406 /* Build configuration list for PBXNativeTarget "TCA" */ = {
+		23B472372DCA1E2F00E8D254 /* Build configuration list for PBXNativeTarget "FoodMart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2369CB272DC8945900A2B406 /* Debug */,
-				2369CB282DC8945900A2B406 /* Release */,
+				23B472382DCA1E2F00E8D254 /* Debug */,
+				23B472392DCA1E2F00E8D254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2369CB292DC8945900A2B406 /* Build configuration list for PBXNativeTarget "TCATests" */ = {
+		23B4723A2DCA1E2F00E8D254 /* Build configuration list for PBXNativeTarget "FoodMartTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2369CB2A2DC8945900A2B406 /* Debug */,
-				2369CB2B2DC8945900A2B406 /* Release */,
+				23B4723B2DCA1E2F00E8D254 /* Debug */,
+				23B4723C2DCA1E2F00E8D254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2369CB2C2DC8945900A2B406 /* Build configuration list for PBXNativeTarget "TCAUITests" */ = {
+		23B4723D2DCA1E2F00E8D254 /* Build configuration list for PBXNativeTarget "FoodMartUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2369CB2D2DC8945900A2B406 /* Debug */,
-				2369CB2E2DC8945900A2B406 /* Release */,
+				23B4723E2DCA1E2F00E8D254 /* Debug */,
+				23B4723F2DCA1E2F00E8D254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -584,7 +587,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2369CB3B2DC8965B00A2B406 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		23B472402DCA1E6100E8D254 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
 			requirement = {
@@ -595,12 +598,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		23B4720B2DCA182500E8D254 /* ComposableArchitecture */ = {
+		23B472422DCA1E6A00E8D254 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2369CB3B2DC8965B00A2B406 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 23B472402DCA1E6100E8D254 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 2369CAFD2DC8945800A2B406 /* Project object */;
+	rootObject = 23B4720E2DCA1E2E00E8D254 /* Project object */;
 }

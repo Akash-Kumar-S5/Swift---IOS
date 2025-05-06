@@ -30,3 +30,7 @@ struct ImageDemoView: View {
         .padding()
     }
 }
+
+#Preview {
+    ImageDemoView()
+}
