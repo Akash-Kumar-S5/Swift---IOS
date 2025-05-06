@@ -28,13 +28,17 @@ let products: Set = [p1, p2]
 print(products.count)
 
 //Comparing values for UI updates or conditions
-struct Point: Equatable {
+
+struct Point: Equatable, Hashable {
     let x: Int
     let y: Int
 }
 
 let p11 = Point(x: 1, y: 2)
 let p12 = Point(x: 1, y: 2)
+
+let pointSet: Set = [p11, p12]
+print(pointSet.count)
 
 print(p11 == p12)
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct unitTestingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PostListView(viewModel: PostViewModel())
         }
     }
 }
