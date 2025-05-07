@@ -1,3 +1,5 @@
+// https://www.themealdb.com/api.php
+
 import ComposableArchitecture
 import Foundation
 
@@ -6,11 +8,14 @@ struct FoodListReducer {
     struct State: Equatable {
         var meals: [MealItem] = []
         var isLoading: Bool = false
+        var selectedMeal: MealItem? = nil
     }
 
     enum Action: Equatable {
         case onAppear
         case mealsResponse(Result<[MealItem], MealError>)
+        case mealTapped(MealItem)
+        case setNavigation(Bool)
     }
 
     enum MealError: Error, Equatable {
@@ -42,6 +47,17 @@ struct FoodListReducer {
             case .mealsResponse(.failure):
                 state.isLoading = false
                 state.meals = []
+                return .none
+                
+            case let .mealTapped(meal):
+                state.selectedMeal = meal
+                return .none
+
+            case .setNavigation(false):
+                state.selectedMeal = nil
+                return .none
+                
+            default:
                 return .none
             }
         }

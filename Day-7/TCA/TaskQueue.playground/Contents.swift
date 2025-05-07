@@ -113,10 +113,10 @@ func simulateWork(taskName: String, duration: UInt64) async {
 // Launch tasks with varying priorities
 func runTasksWithDifferentPriorities() {
     Task(priority: .background) {
-        await simulateWork(taskName: "Background Task", duration: 1_000_000_000)
+         await simulateWork(taskName: "Background Task", duration: 1_000_000_000)
     }
 
-    Task(priority: .utility) {
+    Task(priority: .utility)  {
         await simulateWork(taskName: "Utility Task", duration: 1_000_000_000)
     }
 

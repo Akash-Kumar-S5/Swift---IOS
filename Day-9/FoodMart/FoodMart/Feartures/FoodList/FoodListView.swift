@@ -7,36 +7,33 @@ struct FoodListView: View {
     var body: some View {
         WithViewStore(store, observe: \.self) { viewStore in
             NavigationStack {
-                List(viewStore.meals) { meal in
-                    HStack(spacing: 16) {
-                        
-                        AsyncImage(url: URL(string: meal.strMealThumb ?? "")) { phase in
-                            switch phase {
-                            case .empty:
-                                ProgressView()
-                            case .success(let image):
-                                image.resizable().scaledToFill().frame(width: 80, height: 80).clipped().cornerRadius(8)
-                            case .failure:
-                                Color.gray.frame(width: 80, height: 80).cornerRadius(8)
-                            @unknown default:
-                                EmptyView()
-                            }
+                ScrollView {
+                    LazyVStack(spacing: 16) {
+                        ForEach(viewStore.meals) { meal in
+                            FoodCardView(meal: meal)
+                                .onTapGesture {
+                                    viewStore.send(.mealTapped(meal))
+                                }
                         }
-
-                        VStack(alignment: .leading) {
-                            Text(meal.strMeal).font(.headline)
-                            if let category = meal.strCategory {
-                                Text(category).font(.subheadline).foregroundColor(.gray)
-                            }
-                        }
-                    }.padding(.vertical, 8)
-                }
-                .overlay {
-                    if viewStore.isLoading {
-                        ProgressView("Loading...")
                     }
+                    .padding(.top)
                 }
                 .navigationTitle("Meals")
+                .navigationDestination(
+                    isPresented: viewStore.binding(
+                        get: { $0.selectedMeal != nil },
+                        send: { isActive in .setNavigation(isActive) }
+                    )
+                ) {
+                    if let meal = viewStore.selectedMeal {
+                        MealDetailView(
+                            store: Store(
+                                initialState: MealDetailReducer.State(id: meal.idMeal, meal: meal),
+                                reducer: { MealDetailReducer() }
+                            )
+                        )
+                    }
+                }
                 .onAppear {
                     viewStore.send(.onAppear)
                 }
