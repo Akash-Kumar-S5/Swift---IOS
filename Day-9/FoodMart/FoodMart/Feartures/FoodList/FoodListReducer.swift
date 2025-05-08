@@ -31,9 +31,19 @@ struct FoodListReducer {
                 state.isLoading = true
                 return .run { send in
                     do {
-                        let (data, _) = try await urlSession.data(from: URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=")!)
-                        let decoded = try JSONDecoder().decode(MealResponse.self, from: data)
-                        await send(.mealsResponse(.success(decoded.meals ?? [])))
+                        let (data, _) = try await urlSession.data(
+                            from: URL(
+                                string:
+                                    "https://www.themealdb.com/api/json/v1/1/search.php?s="
+                            )!
+                        )
+                        let decoded = try JSONDecoder().decode(
+                            MealResponse.self,
+                            from: data
+                        )
+                        await send(
+                            .mealsResponse(.success(decoded.meals ?? []))
+                        )
                     } catch {
                         await send(.mealsResponse(.failure(.decodingError)))
                     }
@@ -48,7 +58,7 @@ struct FoodListReducer {
                 state.isLoading = false
                 state.meals = []
                 return .none
-                
+
             case let .mealTapped(meal):
                 state.selectedMeal = meal
                 return .none
@@ -56,7 +66,7 @@ struct FoodListReducer {
             case .setNavigation(false):
                 state.selectedMeal = nil
                 return .none
-                
+
             default:
                 return .none
             }

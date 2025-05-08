@@ -5,6 +5,7 @@
 //  Created by Akash Kumar S on 07/05/25.
 //
 import SwiftUI
+
 struct MealIngrediantList: View {
     let meal: MealItem
     var body: some View {

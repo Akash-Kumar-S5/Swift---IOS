@@ -1,5 +1,5 @@
-import SwiftUI
 import ComposableArchitecture
+import SwiftUI
 
 struct FoodListView: View {
     let store: StoreOf<FoodListReducer>
@@ -28,7 +28,10 @@ struct FoodListView: View {
                     if let meal = viewStore.selectedMeal {
                         MealDetailView(
                             store: Store(
-                                initialState: MealDetailReducer.State(id: meal.idMeal, meal: meal),
+                                initialState: MealDetailReducer.State(
+                                    id: meal.idMeal,
+                                    meal: meal
+                                ),
                                 reducer: { MealDetailReducer() }
                             )
                         )
@@ -43,9 +46,10 @@ struct FoodListView: View {
 }
 
 #Preview {
-    FoodListView(store: Store<FoodListReducer.State, FoodListReducer.Action>(
-        initialState: FoodListReducer.State(),
-        reducer: {FoodListReducer()}
+    FoodListView(
+        store: Store<FoodListReducer.State, FoodListReducer.Action>(
+            initialState: FoodListReducer.State(),
+            reducer: { FoodListReducer() }
         )
     )
 }

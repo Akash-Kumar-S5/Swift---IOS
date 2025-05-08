@@ -19,12 +19,12 @@ struct MealDetailReducer {
             switch action {
             case .onAppear:
                 return .none
-                
+
             case let .toggleIngredientsSheet(isPresented):
                 state.isIngredientsSheetPresented = isPresented
                 return .none
             }
-            
+
         }
     }
 }
