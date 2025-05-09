@@ -9,6 +9,7 @@ struct FoodListReducer {
         var meals: [MealItem] = []
         var isLoading: Bool = false
         var selectedMeal: MealItem? = nil
+        var categories = FoodCategoriesReducer.State()
     }
 
     enum Action: Equatable {
@@ -16,6 +17,7 @@ struct FoodListReducer {
         case mealsResponse(Result<[MealItem], MealError>)
         case mealTapped(MealItem)
         case setNavigation(Bool)
+        case categories(FoodCategoriesReducer.Action)
     }
 
     enum MealError: Error, Equatable {
@@ -25,6 +27,9 @@ struct FoodListReducer {
 
     @Dependency(\.urlSession) var urlSession
     var body: some ReducerOf<Self> {
+        Scope(state: \.categories, action: \.categories) {
+            FoodCategoriesReducer()
+        }
         Reduce { state, action in
             switch action {
             case .onAppear:

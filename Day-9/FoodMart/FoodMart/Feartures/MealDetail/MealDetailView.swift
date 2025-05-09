@@ -61,10 +61,15 @@ struct MealDetailView: View {
                     .padding(.horizontal)
 
                     if let instructions = viewStore.meal.strInstructions {
+                        Text("Instructions:")
+                            .font(.title2)
+                            .foregroundColor(.black.opacity(0.7))
+                            .padding(.horizontal)
                         Text(instructions)
                             .font(.body)
                             .padding(.horizontal)
                     }
+                    
                     Spacer()
                 }
                 .padding()
