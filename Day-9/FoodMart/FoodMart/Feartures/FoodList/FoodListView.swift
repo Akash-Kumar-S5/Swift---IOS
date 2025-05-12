@@ -8,6 +8,9 @@ struct FoodListView: View {
         WithViewStore(store, observe: \.self) { viewStore in
             NavigationStack {
                 ScrollView {
+                    if viewStore.isLoading {
+                        ProgressView()
+                    }
                     VStack(alignment: .leading, spacing: 16) {
                         FoodCategoriesView(
                             store: store.scope(
@@ -15,6 +18,7 @@ struct FoodListView: View {
                                 action: \.categories
                             )
                         )
+
                         LazyVStack(spacing: 16) {
                             ForEach(viewStore.meals) { meal in
                                 FoodCardView(meal: meal)
@@ -25,7 +29,9 @@ struct FoodListView: View {
                             }
                         }
                         .padding(.top)
+
                     }
+
                     .navigationTitle("Meals")
                     .navigationDestination(
                         isPresented: viewStore.binding(
@@ -54,11 +60,11 @@ struct FoodListView: View {
     }
 }
 
-//#Preview {
-//    FoodListView(
-//        store: Store<FoodListReducer.State, FoodListReducer.Action>(
-//            initialState: FoodListReducer.State(),
-//            reducer: { FoodListReducer() }
-//        )
-//    )
-//}
+#Preview {
+    FoodListView(
+        store: Store<FoodListReducer.State, FoodListReducer.Action>(
+            initialState: FoodListReducer.State(),
+            reducer: { FoodListReducer() }
+        )
+    )
+}

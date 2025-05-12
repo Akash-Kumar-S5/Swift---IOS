@@ -10,6 +10,7 @@ struct FoodListReducer {
         var isLoading: Bool = false
         var selectedMeal: MealItem? = nil
         var categories = FoodCategoriesReducer.State()
+        var hasLoadedMeals = false
     }
 
     enum Action: Equatable {
@@ -26,6 +27,25 @@ struct FoodListReducer {
     }
 
     @Dependency(\.urlSession) var urlSession
+
+    func fetchMeals(for category: String) async throws -> [MealItem] {
+        let urlString =
+            "https://www.themealdb.com/api/json/v1/1/filter.php?c=\(category)"
+        guard
+            let url = URL(
+                string: urlString.addingPercentEncoding(
+                    withAllowedCharacters: .urlQueryAllowed
+                )!
+            )
+        else {
+            throw MealError.networkError("Invalid URL")
+        }
+
+        let (data, _) = try await urlSession.data(from: url)
+        let response = try JSONDecoder().decode(MealResponse.self, from: data)
+        return response.meals ?? []
+    }
+
     var body: some ReducerOf<Self> {
         Scope(state: \.categories, action: \.categories) {
             FoodCategoriesReducer()
@@ -34,6 +54,12 @@ struct FoodListReducer {
             switch action {
             case .onAppear:
                 state.isLoading = true
+                guard !state.hasLoadedMeals else {
+                    state.isLoading = false
+                    return .none
+                }
+                state.hasLoadedMeals = true
+
                 return .run { send in
                     do {
                         let (data, _) = try await urlSession.data(
@@ -71,6 +97,23 @@ struct FoodListReducer {
             case .setNavigation(false):
                 state.selectedMeal = nil
                 return .none
+
+            case let .categories(.categorySelected(category)):
+                state.categories.selectedCategory = category
+                return .run { send in
+                    do {
+                        let meals = try await fetchMeals(for: category)
+                        await send(.mealsResponse(.success(meals)))
+                    } catch {
+                        await send(
+                            .mealsResponse(
+                                .failure(
+                                    .networkError(error.localizedDescription)
+                                )
+                            )
+                        )
+                    }
+                }
 
             default:
                 return .none

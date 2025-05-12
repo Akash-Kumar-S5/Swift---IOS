@@ -84,6 +84,9 @@ struct MealDetailView: View {
             ) {
                 MealIngrediantList(meal: viewStore.meal)
             }
+            .onAppear{
+                viewStore.send(.onAppear)
+            }
         }
     }
 }

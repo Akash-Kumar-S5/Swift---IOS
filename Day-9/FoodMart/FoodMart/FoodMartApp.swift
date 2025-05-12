@@ -12,10 +12,10 @@ import ComposableArchitecture
 struct FoodMartApp: App {
     var body: some Scene {
         WindowGroup {
-            FoodListView(store: Store<FoodListReducer.State, FoodListReducer.Action>(
-                initialState: FoodListReducer.State(),
-                reducer: {FoodListReducer()}
-                )
+            AppView(store: Store<AppReducer.State, AppReducer.Action> (
+                initialState: AppReducer.State(),
+                reducer: { AppReducer()}
+            )
             )
         }
     }
