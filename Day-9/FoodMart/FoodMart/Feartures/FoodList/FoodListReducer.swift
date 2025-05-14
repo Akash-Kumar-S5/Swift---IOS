@@ -99,6 +99,7 @@ struct FoodListReducer {
                 return .none
 
             case let .categories(.categorySelected(category)):
+                state.isLoading = true
                 state.categories.selectedCategory = category
                 return .run { send in
                     do {
