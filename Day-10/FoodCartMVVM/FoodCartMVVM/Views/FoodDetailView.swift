@@ -10,7 +10,8 @@ struct FoodDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                AsyncImage(url: URL(string: viewModel.meal.strMealThumb ?? "")) { phase in
+                AsyncImage(url: URL(string: viewModel.meal.strMealThumb ?? ""))
+                { phase in
                     switch phase {
                     case .empty:
                         ProgressView()

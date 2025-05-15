@@ -2,9 +2,17 @@ import SwiftUI
 
 struct FoodListView: View {
     @StateObject private var viewModel = FoodListViewModel()
-    
+    @ObservedObject var authViewModel: AuthViewModel
+
     var body: some View {
         NavigationStack {
+            VStack(spacing: 16) {
+                Text("Welcome, \(authViewModel.username)!")
+                Button("Sign Out") {
+                    authViewModel.signOut()
+                }
+                .buttonStyle(.bordered)
+            }
             if viewModel.isLoading {
                 ProgressView()
             }
@@ -26,8 +34,4 @@ struct FoodListView: View {
             await viewModel.fetchMeals()
         }
     }
-}
-
-#Preview {
-    FoodListView()
 }
