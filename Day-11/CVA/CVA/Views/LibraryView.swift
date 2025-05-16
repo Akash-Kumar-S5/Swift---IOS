@@ -1,32 +1,38 @@
-import AVKit
 import SwiftUI
+import AVKit
+
+private enum ActiveSheet: Identifiable {
+    case image(UIImage)
+    case video(URL)
+
+    var id: String {
+        switch self {
+        case .image(let img):   return "image-\(img.hashValue)"
+        case .video(let url):   return "video-\(url.absoluteString)"
+        }
+    }
+}
 
 struct LibraryView: View {
     @StateObject private var vm = LibraryViewModel()
-    @State private var selectedImage: UIImage?
-    @State private var showImageViewer = false
-    @State private var selectedVideoURL: URL?
-    @State private var showVideoPlayer = false
+    @State private var activeSheet: ActiveSheet?
 
     var body: some View {
         NavigationView {
             List {
                 if !vm.photoURLs.isEmpty {
-                    Section(header: Text("Photos")) {
+                    Section("Photos") {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(vm.photoURLs, id: \.self) { url in
-                                    if let img = UIImage(
-                                        contentsOfFile: url.path
-                                    ) {
+                                    if let img = UIImage(contentsOfFile: url.path) {
                                         Image(uiImage: img)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
                                             .frame(width: 100, height: 100)
                                             .clipped()
                                             .onTapGesture {
-                                                selectedImage = img
-                                                showImageViewer = true
+                                                activeSheet = .image(img)
                                             }
                                     }
                                 }
@@ -37,7 +43,7 @@ struct LibraryView: View {
                 }
 
                 if !vm.audioURLs.isEmpty {
-                    Section(header: Text("Audio")) {
+                    Section("Audio") {
                         ForEach(vm.audioURLs, id: \.self) { url in
                             HStack {
                                 Text(url.lastPathComponent)
@@ -46,12 +52,10 @@ struct LibraryView: View {
                                 Button {
                                     vm.playAudio(url: url)
                                 } label: {
-                                    Image(
-                                        systemName:
-                                            vm.isPlaying
-                                            && vm.currentlyPlayingURL == url
-                                            ? "pause.circle"
-                                            : "play.circle"
+                                    Image(systemName:
+                                        vm.isPlaying && vm.currentlyPlayingURL == url
+                                          ? "pause.circle"
+                                          : "play.circle"
                                     )
                                 }
                                 .buttonStyle(BorderlessButtonStyle())
@@ -61,15 +65,14 @@ struct LibraryView: View {
                 }
 
                 if !vm.videoURLs.isEmpty {
-                    Section(header: Text("Videos")) {
+                    Section("Videos") {
                         ForEach(vm.videoURLs, id: \.self) { url in
                             HStack {
                                 Text(url.lastPathComponent)
                                     .lineLimit(1)
                                 Spacer()
                                 Button("Play") {
-                                    selectedVideoURL = url
-                                    showVideoPlayer = true
+                                    activeSheet = .video(url)
                                 }
                             }
                         }
@@ -78,17 +81,16 @@ struct LibraryView: View {
             }
             .navigationTitle("Library")
             .onAppear { vm.fetchMedia() }
-            .sheet(isPresented: $showImageViewer) {
-                if let img = selectedImage {
+      
+            .sheet(item: $activeSheet) { sheet in
+                switch sheet {
+                case .image(let img):
                     Image(uiImage: img)
                         .resizable()
                         .scaledToFit()
                         .background(Color.black)
-                }
-            }
-            .sheet(isPresented: $showVideoPlayer) {
-                if let videoURL = selectedVideoURL {
-                    VideoPlayer(player: AVPlayer(url: videoURL))
+                case .video(let url):
+                    VideoPlayer(player: AVPlayer(url: url))
                         .edgesIgnoringSafeArea(.all)
                 }
             }

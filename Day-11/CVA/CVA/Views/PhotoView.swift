@@ -9,7 +9,24 @@ struct PhotoView: View {
                 .ignoresSafeArea()
 
             VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        viewModel.flipCamera()
+                    } label: {
+                        Image(systemName: "camera.rotate")
+                            .font(.title2)
+                            .padding(10)
+                            .background(Color.black.opacity(0.5))
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                    }
+                    .padding(.top, 16)
+                    .padding(.trailing, 16)
+                }
+
                 Spacer()
+
                 Button {
                     viewModel.capturePhoto()
                 } label: {

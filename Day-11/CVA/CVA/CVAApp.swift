@@ -6,11 +6,11 @@ struct CVAApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if authVM.isAuthenticated {
+//            if authVM.isAuthenticated {
                 MainView()  
-            } else {
-                AuthView(viewModel: authVM)
-            }
+//            } else {
+//                AuthView(viewModel: authVM)
+//            }
         }
     }
 }

@@ -8,6 +8,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     let session = AVCaptureSession()
     private let output = AVCapturePhotoOutput()
     private var isConfigured = false
+    private var currentPosition: AVCaptureDevice.Position = .back
 
     enum CameraError: LocalizedError, Identifiable {
         case noCamera, configurationFailed, captureFailed
@@ -56,17 +57,39 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     }
 
     func capturePhoto() {
-        guard let connection = output.connection(with: .video) else {
-            DispatchQueue.main.async { self.error = .captureFailed }
-            return
-        }
-        if #available(iOS 17.0, *) {
-            connection.videoRotationAngle = 90.0
-        } else {
-            connection.videoOrientation = .portrait
-        }
-        let settings = AVCapturePhotoSettings()
-        output.capturePhoto(with: settings, delegate: self)
+        #if targetEnvironment(simulator)
+            let renderer = UIGraphicsImageRenderer(
+                size: CGSize(width: 300, height: 300)
+            )
+            let dummy = renderer.image { ctx in
+                UIColor.systemTeal.setFill()
+                ctx.fill(CGRect(x: 0, y: 0, width: 300, height: 300))
+                let attrs: [NSAttributedString.Key: Any] = [
+                    .font: UIFont.systemFont(ofSize: 48),
+                    .foregroundColor: UIColor.white,
+                ]
+                let text = "📸"
+                let size = text.size(withAttributes: attrs)
+                let point = CGPoint(
+                    x: (300 - size.width) / 2,
+                    y: (300 - size.height) / 2
+                )
+                text.draw(at: point, withAttributes: attrs)
+            }
+            savePhoto(image: dummy)
+        #else
+            guard let connection = output.connection(with: .video) else {
+                DispatchQueue.main.async { self.error = .captureFailed }
+                return
+            }
+            if #available(iOS 17.0, *) {
+                connection.videoRotationAngle = rotationAngle(for: .portrait)
+            } else {
+                connection.videoOrientation = .portrait
+            }
+            let settings = AVCapturePhotoSettings()
+            output.capturePhoto(with: settings, delegate: self)
+        #endif
     }
 
     func photoOutput(
@@ -74,17 +97,44 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
         didFinishProcessingPhoto photo: AVCapturePhoto,
         error: Error?
     ) {
-        if error != nil {
-            DispatchQueue.main.async { self.error = .captureFailed }
-            return
-        }
-        guard let data = photo.fileDataRepresentation(),
+        guard
+            error == nil,
+            let data = photo.fileDataRepresentation(),
             let image = UIImage(data: data)
         else {
             DispatchQueue.main.async { self.error = .captureFailed }
             return
         }
         savePhoto(image: image)
+    }
+
+    func flipCamera() {
+        guard
+            let currentInput = session.inputs
+                .compactMap({ $0 as? AVCaptureDeviceInput })
+                .first
+        else { return }
+
+        session.beginConfiguration()
+        session.removeInput(currentInput)
+
+        let newPosition: AVCaptureDevice.Position =
+            (currentPosition == .back) ? .front : .back
+        if let device = AVCaptureDevice.default(
+            .builtInWideAngleCamera,
+            for: .video,
+            position: newPosition
+        ),
+            let newInput = try? AVCaptureDeviceInput(device: device),
+            session.canAddInput(newInput)
+        {
+            session.addInput(newInput)
+            currentPosition = newPosition
+        } else {
+            session.addInput(currentInput)
+        }
+
+        session.commitConfiguration()
     }
 
     private func savePhoto(image: UIImage) {
